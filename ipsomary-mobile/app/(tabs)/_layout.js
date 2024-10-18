@@ -15,7 +15,7 @@ export default function TabsLayout() {
         },
         tabBarActiveTintColor: "#309c18", // Color de íconos y texto cuando están activos
         tabBarInactiveTintColor: "#ccc", // Color de íconos y texto cuando están inactivos
-        tabBarIcon: ({ color, focused }) => {
+        tabBarIcon: ({ color }) => {
           let IconComponent;
 
           // Asignar el ícono en función de la ruta
@@ -33,9 +33,7 @@ export default function TabsLayout() {
               IconComponent = CalendarIcon;
           }
 
-          return (
-            <IconComponent width={20} height={20} fill={color} /> // Cambia el color del ícono usando la propiedad fill
-          );
+          return <IconComponent width={20} height={20} fill={color} />;
         },
       })}
     >

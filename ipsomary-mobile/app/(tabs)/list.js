@@ -1,5 +1,5 @@
 import { ScrollView, Text, StyleSheet } from "react-native";
-import { ScreenLayout } from "../../src/auth/components/ScreenLayout";
+import { ScreenLayout } from "../../src/components/ScreenLayout";
 
 export default function List() {
   return (

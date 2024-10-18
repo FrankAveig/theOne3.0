@@ -17,7 +17,7 @@ import ArrowIcon from "../../../assets/images/icons/arrow.svg";
 import EyeIcon from "../../../assets/images/icons/eye-solid.svg";
 import EyeSlashIcon from "../../../assets/images/icons/eye-slash-solid.svg";
 import login from "../services/authServices";
-import { ScreenLayout } from "../components/ScreenLayout";
+import { ScreenLayout } from "../../components/ScreenLayout";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string()
@@ -43,8 +43,7 @@ export function Login() {
     setLoading(true);
     setErrorMessage("");
     try {
-      const response = await login(values.email, values.password);
-      alert("Usuario logueado");
+      await login(values.email, values.password);
 
       router.push("/calendar"); // Redirige a la página de calendario
     } catch (error) {
