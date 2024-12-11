@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aceptación de Oferta</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        #message {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        #approveButton {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        #approveButton:hover {
+            background-color: #0056b3;
+        }
+
+        .spinner {
+            display: none;
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #007bff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .offer-section {
+            margin-top: 20px;
+        }
+
+        .offer-header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .offer-details {
+            margin-top: 10px;
+            display: none;
+            text-align: left;
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        .offer-details p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .offer-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .offer-details ul li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img class="logo" src="./logo.png" alt="Logo">
+        <h1>Aceptación de Oferta</h1>
+        <p id="message">Haz clic en el botón para aprobar tu oferta</p>
+        <button id="approveButton">Aprobar Oferta</button>
+        <div class="spinner" id="spinner"></div>
+        <div class="offer-section">
+            <div class="offer-header" id="offerHeader">Datos de la Oferta</div>
+            <div class="offer-details" id="offerDetails"></div>
+        </div>
+    </div>
+    <script src="./accept.js"></script>
+</body>
+
+</html>
