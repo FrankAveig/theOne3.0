@@ -30,7 +30,7 @@
         .logo {
             width: 150px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
         h1 {
@@ -47,17 +47,20 @@
 
         #approveButton {
             padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
-            border: none;
+            margin-top: 2%;
+            background-color: transparent;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            border: 1px solid #548e61;
+            color: #548e61;
+            background-color: rgba(84, 142, 97, 0.1);
         }
 
         #approveButton:hover {
-            background-color: #0056b3;
+            background-color: #548e61;
+            color: white;
         }
 
         .spinner {
@@ -96,7 +99,7 @@
 
         .offer-details {
             margin-top: 10px;
-            display: none;
+            display: block;
             text-align: left;
             background-color: #f1f1f1;
             padding: 15px;
@@ -127,14 +130,12 @@
 <body>
     <div class="container">
         <img class="logo" src="./logo.png" alt="Logo">
-        <h1>Aceptación de Oferta</h1>
-        <p id="message">Haz clic en el botón para aprobar tu oferta</p>
-        <button id="approveButton">Aprobar Oferta</button>
+        <h1>Aceptación de oferta</h1>
         <div class="spinner" id="spinner"></div>
         <div class="offer-section">
-            <div class="offer-header" id="offerHeader">Datos de la Oferta</div>
             <div class="offer-details" id="offerDetails"></div>
         </div>
+        <button id="approveButton">Aprobar oferta</button>
     </div>
     <script src="./accept.js"></script>
 </body>

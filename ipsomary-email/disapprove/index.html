@@ -47,17 +47,21 @@
 
         #rejectButton {
             padding: 10px 20px;
-            background-color: #dc3545;
-            color: white;
-            border: none;
+            margin-top: 2%;
+            background-color: transparent;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s;
+            border: 1px solid #dd7c86;
+            color: #dd7c86;
+            background-color: rgba(221, 124, 134, 0.1);
+            ;
         }
 
         #rejectButton:hover {
-            background-color: #c82333;
+            background-color: #dd7c86;
+            color: white;
         }
 
         .spinner {
@@ -105,7 +109,7 @@
 
         .offer-details {
             margin-top: 10px;
-            display: none;
+            display: block;
             text-align: left;
             background-color: #f1f1f1;
             padding: 15px;
@@ -136,15 +140,14 @@
 <body>
     <div class="container">
         <img class="logo" src="./logo.png" alt="Logo">
-        <h1>Rechazo de Oferta</h1>
+        <h1>Rechazo de oferta</h1>
         <p id="message">Escribe el motivo y haz clic en el botón para rechazar tu oferta</p>
-        <textarea id="contactNote" placeholder="Escribe el motivo del rechazo..." rows="4"></textarea>
+        <textarea id="contactNote" placeholder="Escribe el motivo del rechazo..." rows="2"></textarea>
         <div class="spinner" id="spinner"></div>
-        <button id="rejectButton">Rechazar Oferta</button>
         <div class="offer-section">
-            <div class="offer-header" id="offerHeader">Datos de la Oferta</div>
             <div class="offer-details" id="offerDetails"></div>
         </div>
+        <button id="rejectButton">Rechazar oferta</button>
     </div>
     <script src="./reject.js"></script>
 </body>

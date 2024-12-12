@@ -5,13 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const approveButton = document.getElementById('approveButton');
     const spinner = document.getElementById('spinner');
     const offerHeader = document.getElementById('offerHeader');
-    const offerDetails = document.getElementById('offerDetails');
 
     // Toggle offer details visibility
-    offerHeader.addEventListener('click', () => {
-        const isVisible = offerDetails.style.display === 'block';
-        offerDetails.style.display = isVisible ? 'none' : 'block';
-    });
+
 
     // Obtener datos de la oferta
     if (statusToken) {
@@ -24,19 +20,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.data.status === 200) {
                     const data = response.data.data;
                     offerDetails.innerHTML = `
-                    <h3>Clientes</h3>
-                    <ul>
-                        ${data.clients.map(client => `<li>${client.name}</li>`).join('')}
-                    </ul>
-                        <p><strong>Nombre del Proyecto:</strong> ${data.project_name}</p>
+                        <p><strong>Clientes:</strong> ${data.clients.map(client => `${client.name}`).join('')}</p>
+                        <p><strong>Nombre del proyecto:</strong> ${data.project_name}</p>
                         <p><strong>Código:</strong> ${data.code}</p>
                         <p><strong>Dirección:</strong> ${data.address}</p>
                         <p><strong>Ciudad:</strong> ${data.city}</p>
                         <p><strong>Subtotal:</strong> $${data.subtotal}</p>
-                        <p><strong>Extras Subtotal:</strong> $${data.extras_subtotal}</p>
+                        <p><strong>Extras subtotal:</strong> $${data.extras_subtotal}</p>
                         <p><strong>Impuestos:</strong> $${data.taxes}</p>
-                        <p><strong>Total:</strong> $${data.total}</p>
                         <p><strong>Descuento:</strong> $${data.discount}</p>
+                        <p><strong>Total:</strong> $${data.total}</p>
                     `;
                 } else {
                     offerDetails.textContent = 'No se pudieron cargar los datos de la oferta.';
